@@ -15,8 +15,8 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        sum1 = 0
+    #def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def addTwoNumbers(self, l1, l2):
         t1 = 1
         while (l1):
             sum1 += l1.val * t1
@@ -40,4 +40,4 @@ class Solution:
             tmp_node.next = ListNode(sum % 10)
             tmp_node = tmp_node.next
             sum = sum // 10
-        return node.next;
+        return node.next

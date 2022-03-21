@@ -8,7 +8,8 @@
 # 链接：https://leetcode-cn.com/problems/two-sum
 # 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    #def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums, target):
         dic={}
         for i, num in enumerate(nums):
             if target - num in dic:
