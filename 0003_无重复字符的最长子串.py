@@ -29,6 +29,7 @@
 # 链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
 # 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
+#优化的滑动窗口
 class Solution:
     # def lengthOfLongestSubstring(self, s: str) -> int:
     def lengthOfLongestSubstring(self, s):
@@ -39,7 +40,9 @@ class Solution:
         if s is None or len(s) == 0:
             return max_len
 
+        #输入合法，遍历S，并把不重复的放在sub_str里
         for i in s:
+            # 没有在sub_str的字符，注意是该字符没有在sub_str
             if i not in sub_str:
                 sub_str += i
                 max_len = max(max_len, len(sub_str))
