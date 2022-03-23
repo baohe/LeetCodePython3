@@ -28,3 +28,22 @@
 # 来源：力扣（LeetCode）
 # 链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
 # 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+class Solution:
+    # def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s):
+        max_len = 0
+        sub_str = ""
+
+        # 判断输入是否合法
+        if s is None or len(s) == 0:
+            return max_len
+
+        for i in s:
+            if i not in sub_str:
+                sub_str += i
+                max_len = max(max_len, len(sub_str))
+            else:
+                sub_str += i
+                sub_str = sub_str[sub_str.index(i)+1:]
+        return max_len
